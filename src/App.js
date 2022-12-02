@@ -1,15 +1,13 @@
-import Footer from "./components/Footer/Footer";
-import SignIn from "./components/SignIn/SignIn";
-import SignUp from "./components/SignUp/SignUp";
-import '../src/components/SignUp/SignUp.css';
-import '../src/components/SignIn/SignIn.css'
+import './App.css';
+import Footer from './components/Footer/Footer';
+import Navbar from "./components/Navbar/Navbar";
+import MainRoutes from './routes/MainRoutes';
 
 function App() {
   return (
     <div>
-      <SignIn/> 
-      
-      <SignUp/>
+      <Navbar />
+      <MainRoutes />
       <Footer/>
     </div>
   );
