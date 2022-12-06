@@ -2,14 +2,16 @@ import './App.css';
 import Footer from './components/Footer/Footer';
 import Navbar from "./components/Navbar/Navbar";
 import MainRoutes from './routes/MainRoutes';
+import Netflix from './components/Netflix/Netflix'
 
 function App() {
   return (
-    <div>
-      <Navbar />
+    <>
+      <Netflix/>
+      {/* <Navbar /> */}
       <MainRoutes />
       <Footer/>
-    </div>
+    </>
   );
 }
 

@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import React from 'react';
 import './MoviesCard.css'
 const MoviesCard = ({item}) => {
@@ -39,7 +39,7 @@ const MoviesCard = ({item}) => {
           </Box>
       
           <Box className='card-info'>
-            <Typography class='match-score'>97% Match</Typography>
+            <Typography className='match-score'>97% Match</Typography>
             <Typography className='maturity-rating'>18+</Typography>
             <Typography>6 Seasons</Typography>
             <Typography className='feature'>HD</Typography>

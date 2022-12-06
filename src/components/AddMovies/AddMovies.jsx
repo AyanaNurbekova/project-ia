@@ -1,4 +1,4 @@
-import { Button, FormControl, InputAdornment, InputLabel, OutlinedInput, TextField, Typography } from '@mui/material';
+import { Button, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useState } from 'react';
 import { useMovies } from '../../contexts/MoviesContextProvider';
@@ -37,7 +37,7 @@ const AddMovies = () => {
         >
             <Typography
                 sx={{
-                    color: "red",
+                    color: "#E5E5E5",
                     fontSize: "40px",
                     fontWeight: 'bold',
                 }}

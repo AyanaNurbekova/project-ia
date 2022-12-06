@@ -10,7 +10,8 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
+import './Auth.css';
+import { useNavigate } from 'react-router-dom';
 
 
 function Netflix(props) {
@@ -26,6 +27,9 @@ function Netflix(props) {
 const theme = createTheme();
 
 export default function SignUp() {
+  const navigate = useNavigate(); 
+  
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -125,13 +129,17 @@ export default function SignUp() {
                fullWidth
                variant="contained"
                sx={{ mt: 2, mb: 2 }}
+               onClick={() => {
+                navigate('/')
+               }}
              >
                SIGN UP
              </Button>
              <Grid container justifyContent="center" >
                <Grid item>
                  <Link 
-                 href="/#" 
+                 onClick={() => navigate ("/auth")}
+                 href="/auth" 
                  variant="body2">
                    Already have an account? Sign in
                  </Link>

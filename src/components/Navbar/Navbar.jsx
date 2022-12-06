@@ -12,53 +12,54 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import MailIcon from '@mui/icons-material/Mail';
+// import MailIcon from '@mui/icons-material/Mail';/
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-
-const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.25),
-  '&:hover': {
+export default function Navbar() {
+  const Search = styled('div')(({ theme }) => ({
+    position: 'relative',
+    borderRadius: theme.shape.borderRadius,
     backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginRight: theme.spacing(2),
-  marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(3),
-    width: 'auto',
-  },
-}));
-
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'white',
-  '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '20ch',
+    '&:hover': {
+      backgroundColor: alpha(theme.palette.common.white, 0.25),
     },
-  },
-}));
+    marginRight: theme.spacing(2),
+    marginLeft: 0,
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: theme.spacing(3),
+      width: 'auto',
+    },
+  }));
+  
+  const SearchIconWrapper = styled('div')(({ theme }) => ({
+    padding: theme.spacing(0, 2),
+    height: '100%',
+    position: 'absolute',
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }));
+  
+  const StyledInputBase = styled(InputBase)(({ theme }) => ({
+    color: 'white',
+    '& .MuiInputBase-input': {
+      padding: theme.spacing(1, 1, 1, 0),
+      // vertical padding + font size from searchIcon
+      paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+      transition: theme.transitions.create('width'),
+      width: '100%',
+      [theme.breakpoints.up('md')]: {
+        width: '20ch',
+      },
+    },
+  }));
 
-export default function PrimarySearchAppBar() {
+  const navigate = useNavigate();
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -81,10 +82,11 @@ export default function PrimarySearchAppBar() {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
-
+ //! ==============RENDER
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
     <Menu
+      onClick={() => navigate ("/netflixmain")}
       anchorEl={anchorEl}
       anchorOrigin={{
         vertical: 'top',
@@ -99,12 +101,14 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleMenuClose}>Sign out</MenuItem>
+      {/* <MenuItem onClick={handleMenuClose}>My account</MenuItem> */}
     </Menu>
-  );
+  );//!
 
+  //! RENDER 2 РЕЖИМ МОБИЛЬНЫЙ
   const mobileMenuId = 'primary-search-account-menu-mobile';
+
   const renderMobileMenu = (
     <Menu
       anchorEl={mobileMoreAnchorEl}
@@ -121,45 +125,43 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
+
       <MenuItem>
         <IconButton
           size="large"
-          aria-label="show 17 new notifications"
           color="inherit"
         >
-          <Badge badgeContent={17} color="error">
+          <Badge badgeContent={0} color="error">
             <NotificationsIcon />
           </Badge>
         </IconButton>
         <p>Notifications</p>
       </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
+
+      <MenuItem onClick={() => navigate ("/auth")}>
         <IconButton
           size="large"
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
           color="inherit"
-        >
+        > Profile
           <AccountCircle />
         </IconButton>
-        <p>Profile</p>
+      
       </MenuItem>
     </Menu>
-  );
+  );//!
+
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar sx={{backgroundColor: 'black'}} position="static">
-        <Toolbar>
+      <AppBar sx={{backgroundColor: '#141414'}} position="static">
+
+
+       {/*  МЕНЮ ДЛЯ NETFLIX, HOME, MYLIST, MOVIES, ADD MOVIES (Т.Е КНОПКИ) */}
+        <Toolbar> 
+          {/*  КНОПКА БУРГЕР - ИКОНКА */}
           <IconButton
             size="large"
             edge="start"
@@ -168,7 +170,11 @@ export default function PrimarySearchAppBar() {
             sx={{ mr: 2 }}
           >
             <MenuIcon />
-          </IconButton>
+          </IconButton> 
+          {/* !!! */}
+
+         {/* NETFLIX ICON */}
+          {/* <Link to='/netflixmain' style={{textDecoration: 'none'}}> */}
           <Typography
             variant="h5"
             noWrap
@@ -177,71 +183,97 @@ export default function PrimarySearchAppBar() {
           >
             NETFLIX
           </Typography>
-          <Link to='/' style={{textDecoration: 'none'}}>
+          {/* </Link> */}
+
+          {/* ==========HOME */}
+          <Link to='/home' style={{textDecoration: 'none'}}>
           <Typography
             
             noWrap
             component="div"
-            sx={{ display: { xs: 'none', sm: 'block' }, color: 'red', fontWeight: 'bold', paddingX: '20px'}}
+            sx={{ display: { xs: 'none', sm: 'block' }, color: '#E5E5E5', fontWeight: 'bold', paddingX: '20px'}}
           >
             Home
           </Typography>
           </Link>
-          <Link to='movies' style={{textDecoration: 'none'}}>
+
+          { /* ============MOVIES */}
+          <Link to='/movies' style={{textDecoration: 'none'}}>
           <Typography
             
             noWrap
             component="div"
-            sx={{ display: { xs: 'none', sm: 'block' }, color: 'red', fontWeight: 'bold', paddingX: '15px'}}
+            sx={{ display: { xs: 'none', sm: 'block' }, color: '#E5E5E5', fontWeight: 'bold', paddingX: '15px'}}
           >
             Movies
           </Typography>
           </Link>
-          <Link to='addmovies' style={{textDecoration: 'none'}}>
+
+         { /* ============ADD MOVIES */}
+          <Link to='/addmovies' style={{textDecoration: 'none'}}>
           <Typography
-            
+    
             noWrap
             component="div"
-            sx={{ display: { xs: 'none', sm: 'block' }, color: 'red', fontWeight: 'bold', paddingX: '15px'}}
+            sx={{ display: { xs: 'none', sm: 'block' }, color: '#E5E5E5', fontWeight: 'bold', paddingX: '15px'}}
           >
             Add Movies
           </Typography>
           </Link>
-          <Link style={{textDecoration: 'none'}}>
+
+            {/* =============MY LIST */}
+          <Link  style={{textDecoration: 'none'}}>
           <Typography
-            
+
             noWrap
             component="div"
-            sx={{ display: { xs: 'none', sm: 'block' }, color: 'red', fontWeight: 'bold', paddingX: '15px'}}
+            sx={{ display: { xs: 'none', sm: 'block' }, color: '#E5E5E5', fontWeight: 'bold', paddingX: '15px'}}
           >
             My List
           </Typography>
           </Link>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
+
+           {/*============= search */}
+            {/* <Search>
+
+              <SearchIconWrapper>
+                <SearchIcon />
+              </SearchIconWrapper>
+
+              <StyledInputBase
+                placeholder="Search…"
+                inputProps={{ 'aria-label': 'search' }}
+              />
+
+            </Search> */}
           <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge>
-            </IconButton>
+
+          {/* --------------------------------------------------  БЛОК С ПОИСКОМ, УВЕДОМЛЕНИЕМ И ПРОВИЛЬ-------------- */}
+          <Box sx={{ display: { xs: 'none', md: 'flex' },justifyContent:'center',alignItems: 'center' }}>
+
+           <Search>
+               <SearchIconWrapper>
+                 <SearchIcon />
+               </SearchIconWrapper>
+               
+               <StyledInputBase
+                 placeholder="Search…"
+                 inputProps={{ 'aria-label': 'search' }}
+               />
+            </Search>
+
+            {/* ===============уведомление */}
             <IconButton
+              
               size="large"
               aria-label="show 17 new notifications"
               color="inherit"
             >
-              <Badge badgeContent={777} color="error">
+              <Badge badgeContent={7} color="error">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
+           {/* ================profile */}
             <IconButton
               size="large"
               edge="end"
@@ -253,7 +285,11 @@ export default function PrimarySearchAppBar() {
             >
               <AccountCircle />
             </IconButton>
-          </Box>
+
+          </Box>      
+           {/*---------------------КОНЕЦ БЛОКА --------------  */}
+
+
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -266,7 +302,9 @@ export default function PrimarySearchAppBar() {
               <MoreIcon />
             </IconButton>
           </Box>
+
         </Toolbar>
+                                   
       </AppBar>
       {renderMobileMenu}
       {renderMenu}
