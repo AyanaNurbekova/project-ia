@@ -1,8 +1,8 @@
 .card:hover {
-        transition: transform .2s;
-        -ms-transform: scale(1.4);
-        -webkit-transform: scale(1.4);  
-        transform: scale(1.1);
+        transition: transform .3s;
+        -ms-transform: scale(1.9);
+        -webkit-transform: scale(1.0);  
+        transform: scale(1.5);
       }
       :root {
         --color-primary-400: rgba(255,255,255,0.5);
@@ -69,6 +69,7 @@
         content: '•';
         margin-left: 5px;
         color: var(--color-primary-400);
+        /* align-items: center; */
       }
       
       /* Стили кнопок */

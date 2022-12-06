@@ -175,14 +175,14 @@ export default function PrimarySearchAppBar() {
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' }, color: 'red', fontWeight: 'bold'}}
           >
-            NETFLIX
+            REACTFLIX
           </Typography>
           <Link to='/' style={{textDecoration: 'none'}}>
           <Typography
             
             noWrap
             component="div"
-            sx={{ display: { xs: 'none', sm: 'block' }, color: 'red', fontWeight: 'bold', paddingX: '20px'}}
+            sx={{ display: { xs: 'none', sm: 'block' }, color: '#fff', fontWeight: 'bold', paddingX: '20px'}}
           >
             Home
           </Typography>
@@ -192,7 +192,7 @@ export default function PrimarySearchAppBar() {
             
             noWrap
             component="div"
-            sx={{ display: { xs: 'none', sm: 'block' }, color: 'red', fontWeight: 'bold', paddingX: '15px'}}
+            sx={{ display: { xs: 'none', sm: 'block' }, color: '#fff', fontWeight: 'bold', paddingX: '15px'}}
           >
             Movies
           </Typography>
@@ -202,20 +202,23 @@ export default function PrimarySearchAppBar() {
             
             noWrap
             component="div"
-            sx={{ display: { xs: 'none', sm: 'block' }, color: 'red', fontWeight: 'bold', paddingX: '15px'}}
+            sx={{ display: { xs: 'none', sm: 'block' }, color: '#fff', fontWeight: 'bold', paddingX: '15px'}}
           >
             Add Movies
           </Typography>
           </Link>
-          <Link style={{textDecoration: 'none'}}>
+          
+          <Link to='/mylist' style={{textDecoration: 'none'}}>
           <Typography
             
             noWrap
             component="div"
-            sx={{ display: { xs: 'none', sm: 'block' }, color: 'red', fontWeight: 'bold', paddingX: '15px'}}
+            sx={{ display: { xs: 'none', sm: 'block' }, color: '#fff', fontWeight: 'bold', paddingX: '15px'}}
           >
             My List
           </Typography>
+          </Link>
+          <Link style={{textDecoration: 'none'}}>
           </Link>
           <Search>
             <SearchIconWrapper>

@@ -1,31 +1,64 @@
-import { Button, FormControl, InputAdornment, InputLabel, OutlinedInput, TextField, Typography } from '@mui/material';
-import { Box } from '@mui/system';
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useMovies } from '../../contexts/MoviesContextProvider';
+import { Box, Button, TextField, Typography } from '@mui/material';
+import React, { useContext, useEffect, useState } from 'react';
+import { Form, useNavigate, useParams } from 'react-router-dom';
+import { moviesContext } from '../../contexts/MoviesContextProvider';
 
-const AddMovies = () => {
-    const navigate = useNavigate()
-    const {addMovies} = useMovies()
-    const [movies, setMovies] = useState({
-        name: '',
-        year: 0,
-        description: '',
-        picture: '',
-        type: '',
-        movies: ''
-    })
-    const handleInp = (e) => {
-        if (e.target.name === "year") {
-            let obj = { ...movies, [e.target.name]: Number(e.target.value) };
-            setMovies(obj);
-        } else {
-            let obj = { ...movies, [e.target.name]: e.target.value };
-            setMovies(obj);
+const EditMovies = () => {
+    
+    const [name, setName] = useState('')
+    const [year, setYear] = useState(0)
+    const [description, setDescription] = useState('')
+    const [picture, setPicture] = useState('')
+    const [type, setType] = useState('')
+    const [movies, setMovies] = useState('')
+
+    const params = useParams();
+    const navigate = useNavigate();
+
+    const {getOneMovies, updateMovies, oneMovies} = useContext(moviesContext);
+console.log(updateMovies);
+    useEffect(()=>{
+        getOneMovies(params.id)
+    },[])
+
+    useEffect(()=>{
+        if(oneMovies){
+            setName(oneMovies.name);
+            setYear(oneMovies.year);
+            setDescription(oneMovies.description);
+            setPicture(oneMovies.picture);
+            setType(oneMovies.type);
+            setMovies(oneMovies.movies);
+
         }
+    }, [oneMovies])
+
+    const handleValues = () => {
+        const editMovies = {
+            name,
+            year,
+            description,
+            picture,
+            type,
+            movies
+        };
+
+        // if(!name.trim() || !year.trim() || !description.trim() || !picture.trim() || !type.trim() || !movies.trim()){
+        //     alert('заполните поле')
+        //     return;
+        // }
+        updateMovies(params.id, editMovies)
+
+        setName('')
+        setYear(0)
+        setDescription('')
+        setPicture('')
+        setType('')
+        setMovies('')
+
     };
-    return (            
-            <Box
+return (
+    <Box
             align="center"
             sx={{
                 backgroundRepeat: "no-repeat",
@@ -44,7 +77,7 @@ const AddMovies = () => {
                     fontWeight: 'bold',
                 }}
             >
-                ADD MOVIES
+                Edit MOVIES
             </Typography>
             
             <Box
@@ -58,7 +91,7 @@ const AddMovies = () => {
             >
                 
                 <TextField
-                    onChange={handleInp}
+                    onChange={(e)=> setName(e.target.value)} value={name}
                     sx={{
                         borderColor: "white",
                         backgroundColor: "white",
@@ -73,7 +106,7 @@ const AddMovies = () => {
 
                 
                 <TextField
-                    onChange={handleInp}
+                    onChange={(e)=> setYear(e.target.value)} value={year}
                     sx={{
                         borderColor: "black",
                         backgroundColor: "white",
@@ -87,7 +120,7 @@ const AddMovies = () => {
                 />
                 
                 <TextField
-                    onChange={handleInp}
+                    onChange={(e)=> setDescription(e.target.value)} value={description}
                     sx={{
                         borderColor: "black",
                         backgroundColor: "white",
@@ -101,7 +134,7 @@ const AddMovies = () => {
                 />
 
                 <TextField
-                    onChange={handleInp}
+                    onChange={(e)=> setPicture(e.target.value)} value={picture}
                     sx={{
                         borderColor: "black",
                         backgroundColor: "white",
@@ -114,7 +147,7 @@ const AddMovies = () => {
                     size="small"
                 />
                 <TextField
-                    onChange={handleInp}
+                    onChange={(e)=> setType(e.target.value)} value={type}
                     sx={{
                         borderColor: "black",
                         backgroundColor: "white",
@@ -128,7 +161,7 @@ const AddMovies = () => {
                 />
                 
                 <TextField
-                    onChange={handleInp}
+                    onChange={(e)=> setMovies(e.target.value)} value={movies}
                     sx={{
                         borderColor: "black",
                         backgroundColor: "white",
@@ -142,10 +175,7 @@ const AddMovies = () => {
                 />
                 
                 <Button
-                    onClick={() => {
-                        addMovies(movies);
-                        navigate("/movies");
-                    }}
+                    onClick={()=> {handleValues(); navigate('/movies')}}
                     sx={{
                         borderColor: "black",
                         backgroundColor: "black",
@@ -159,11 +189,12 @@ const AddMovies = () => {
                     fullWidth
                     size="large"
                 >
-                    Add Movies
+                    Edit Movies
                 </Button>
                 </Box>
             </Box>
-    );
+)
 };
 
-export default AddMovies;
+
+export default EditMovies;
