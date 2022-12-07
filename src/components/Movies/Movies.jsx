@@ -2,6 +2,7 @@ import { Box } from '@mui/system';
 import React, { useContext, useEffect, useState } from 'react';
 import { moviesContext } from '../../contexts/MoviesContextProvider';
 import MoviesCard from '../MoviesCard/MoviesCard';
+import MoviesSort from '../MoviesSort/MoviesSort';
 import PaginationMovies from '../Pagination/Pagination';
 import './Movies.css'
 const Movies = () => {
@@ -11,6 +12,8 @@ const Movies = () => {
     }, []);
     
     return (
+        <Box>
+        <Box sx={{marginTop: '10px', backgroundColor: '#181818', color: '#fff'}}><MoviesSort /></Box>
         <Box sx={{display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap'}}>
         {data ? (currentData().map((item)=>(
             <MoviesCard key={item.id} item={item} />        
@@ -18,6 +21,7 @@ const Movies = () => {
             <></>
         )}
         <PaginationMovies/>
+        </Box>
         </Box>
     );
 };

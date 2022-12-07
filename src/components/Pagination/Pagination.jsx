@@ -8,7 +8,8 @@ const PaginationMovies = () => {
         setPage(p);
       };
     return (
-        <Box style={{backgroundColor: '#181818', color: '#fff', width: '100%', display: 'flex', justifyContent: 'center', fontSize: '30px', marginTop: '85px'}}>
+        <Box style={{backgroundColor: '#181818', color: '#fff', width: '100%', 
+         display: 'flex', justifyContent: 'center', fontSize: '30px', marginTop: '85px'}}>
             <Stack spacing={2} sx={{ marginRight: 5 }}>
             <Pagination
               onChange={handleChange}
