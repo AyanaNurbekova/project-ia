@@ -255,19 +255,7 @@ export default function Navbar() {
           </Typography>
           </Link>
 
-           {/*============= search */}
-            {/* <Search>
-
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-
-              <StyledInputBase
-                placeholder="Search…"
-                inputProps={{ 'aria-label': 'search' }}
-              />
-
-            </Search> */}
+           
           <Box sx={{ flexGrow: 1 }} />
 
           {/* --------------------------------------------------  БЛОК С ПОИСКОМ, УВЕДОМЛЕНИЕМ И ПРОВИЛЬ-------------- */}
