@@ -15,6 +15,8 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 // import MailIcon from '@mui/icons-material/Mail';/
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
+// import { Link } from 'react-router-dom';
+// import { moviesContext } from '../../contexts/MoviesContextProvider';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContextProvider';
 import { Button } from '@mui/material';
@@ -254,20 +256,18 @@ export default function Navbar() {
             My List
           </Typography>
           </Link>
-
-           {/*============= search */}
-            {/* <Search>
-
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-
-              <StyledInputBase
-                placeholder="Search…"
-                inputProps={{ 'aria-label': 'search' }}
-              />
-
-            </Search> */}
+          {/* <Link style={{textDecoration: 'none'}}>
+          </Link>
+          <Search>
+            <SearchIconWrapper>
+              <SearchIcon />
+            </SearchIconWrapper>
+            <StyledInputBase
+              placeholder="Search…"
+              inputProps={{ 'aria-label': 'search' }}
+              onChange={fetchByParams}
+            />
+          </Search> */}
           <Box sx={{ flexGrow: 1 }} />
 
           {/* --------------------------------------------------  БЛОК С ПОИСКОМ, УВЕДОМЛЕНИЕМ И ПРОВИЛЬ-------------- */}

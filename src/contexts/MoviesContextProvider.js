@@ -19,7 +19,7 @@ const MoviesContextProvider = ({children}) => {
 }
 //!read
 async function getData(){
-    let {data} = await axios.get(JSON_API_MOVIES);
+    let {data} = await axios.get(`${JSON_API_MOVIES}/${window.location.search}`);
     setData(data);
     console.log(data);
 }
