@@ -4,17 +4,19 @@ import App from './App';
 import { BrowserRouter } from "react-router-dom";
 import MoviesContextProvider from './contexts/MoviesContextProvider';
 import NavabarContextProvider from './contexts/NavbarContextProvider';
-import AuthContextProvider from './contexts/AuthContexProvider';
-
+import AuthContextProvider from './contexts/AuthContextProvider';
+import MoviesCardContext from './contexts/MoviesCardContext';
+// 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <MoviesContextProvider>
       <AuthContextProvider>
         <NavabarContextProvider>
-         <App />
+          <MoviesCardContext/>
+          <App />
         </NavabarContextProvider>
       </AuthContextProvider>
     </MoviesContextProvider>
-   </BrowserRouter>
+ </BrowserRouter>
 );

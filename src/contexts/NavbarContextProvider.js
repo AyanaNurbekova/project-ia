@@ -1,7 +1,7 @@
 import React, { createContext, useState } from "react";
 export const navbarContext = createContext();
 
-const NavabarContexts = ({ children }) => {
+const NavabarContextProvider = ({ children }) => {
     const [hover, setHover] = useState(false);
     const [searchState, setSearchState] = useState(false);
     const values = {
@@ -17,4 +17,4 @@ const NavabarContexts = ({ children }) => {
     );
 };
 
-export default NavabarContexts;
+export default NavabarContextProvider;

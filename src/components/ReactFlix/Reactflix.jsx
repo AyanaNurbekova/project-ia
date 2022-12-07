@@ -4,9 +4,9 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Link, useNavigate } from 'react-router-dom';
-import './Netflix.css'
+import './Reactflix.css'
 
-export default function Netflix () {
+export default function Reactflix () {
   const navigate = useNavigate();
 
   return (
@@ -19,19 +19,19 @@ export default function Netflix () {
           justifyContent:'space-between'
           }} >
 
-            <Box>
-              <Typography 
-               component="div"
-               sx={{ 
-               display: 'flex', 
-               color: 'darkred', 
-               fontSize: '40px',
-               fontWeight: 'bold',
-               justifyContent: 'center' 
-               }}>
-               REACTFLIX
-             </Typography>
-           </Box> 
+          <Box>
+          <Typography 
+           component="div"
+           sx={{ 
+           display: 'flex', 
+           color: 'red', 
+           fontSize: '35px',
+           fontWeight: 'bold',
+           justifyContent: 'start' 
+           }}>
+           REACTFLIX
+          </Typography>
+         </Box>
 
           <Button 
           onClick={() => navigate('/auth')}
@@ -244,16 +244,23 @@ export default function Netflix () {
            </Box>
          </Box>
         </Box>
-
-
-
-
-
       </Box>
 
 
-      <Netflix/>
+    
     </Box>
      
   ) ;
 }
+
+
+
+
+
+
+
+
+
+
+
+

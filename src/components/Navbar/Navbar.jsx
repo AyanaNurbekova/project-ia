@@ -16,6 +16,9 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../contexts/AuthContextProvider';
+import { Button } from '@mui/material';
+import { ADMIN } from '../../const';
 
 export default function Navbar() {
   const Search = styled('div')(({ theme }) => ({
@@ -70,6 +73,12 @@ export default function Navbar() {
     setAnchorEl(event.currentTarget);
   };
 
+  const {user: { email },handleSignout} = useAuth();
+
+  const handleCloseProfilMenu = () => {
+    setAnchorEl(null);
+  };
+
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
   };
@@ -86,7 +95,7 @@ export default function Navbar() {
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
     <Menu
-      onClick={() => navigate ("/netflixmain")}
+      onClick={() => navigate ("/auth")}
       anchorEl={anchorEl}
       anchorOrigin={{
         vertical: 'top',
@@ -101,7 +110,7 @@ export default function Navbar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Sign out</MenuItem>
+      {/* <MenuItem onClick={handleMenuClose}>Sing out</MenuItem> */}
       {/* <MenuItem onClick={handleMenuClose}>My account</MenuItem> */}
     </Menu>
   );//!
@@ -145,7 +154,7 @@ export default function Navbar() {
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
           color="inherit"
-        > Profile
+        > Profil
           <AccountCircle />
         </IconButton>
       
@@ -174,19 +183,33 @@ export default function Navbar() {
           {/* !!! */}
 
          {/* NETFLIX ICON */}
-          {/* <Link to='/netflixmain' style={{textDecoration: 'none'}}> */}
+         <Link to='/' style={{textDecoration: 'none'}}>
           <Typography
             variant="h5"
             noWrap
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' }, color: 'red', fontWeight: 'bold'}}
+          
           >
-            NETFLIX
+            REACTFLIX
           </Typography>
-          {/* </Link> */}
+          </Link>
+
+          {email === ADMIN ? (
+                  <Button
+                    onClick={() => navigate('/admin')}
+                    sx={{ textAlign: 'center' }}
+                    color='inherit'
+                  >
+                    admin
+                  </Button>
+                ) : (
+                  <></>
+            )}
+         
 
           {/* ==========HOME */}
-          <Link to='/home' style={{textDecoration: 'none'}}>
+          <Link to='/main' style={{textDecoration: 'none'}}>
           <Typography
             
             noWrap
@@ -220,9 +243,8 @@ export default function Navbar() {
             Add Movies
           </Typography>
           </Link>
-
-            {/* =============MY LIST */}
-          <Link  style={{textDecoration: 'none'}}>
+          
+          <Link to='/mylist' style={{textDecoration: 'none'}}>
           <Typography
 
             noWrap
@@ -269,7 +291,7 @@ export default function Navbar() {
               aria-label="show 17 new notifications"
               color="inherit"
             >
-              <Badge badgeContent={7} color="error">
+              <Badge badgeContent={1} color="error">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
@@ -285,6 +307,46 @@ export default function Navbar() {
             >
               <AccountCircle />
             </IconButton>
+
+            <Menu
+              sx={{ mt: '45px' }}
+              id='menu-appbar'
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={Boolean(anchorEl)}
+              onClose={handleCloseProfilMenu}
+            >
+              {email ? (
+                <MenuItem onClick={handleSignout}>
+                  <Typography sx={{ textAlign: 'center',color:'black' }}>Sign out</Typography>
+                </MenuItem>
+              ) : (
+                <Link
+                  to='/main'
+                  style={{
+                    textDecoration: 'none ',
+                    color: 'error',
+                  }}
+                >
+                  <MenuItem onClick={handleSignout}>
+                    <Typography sx={{ textAlign: 'center',color:'black' }}>Sign in</Typography>
+                  </MenuItem>
+                </Link>
+              )}
+            </Menu>
+
+
+
+
+
 
           </Box>      
            {/*---------------------КОНЕЦ БЛОКА --------------  */}

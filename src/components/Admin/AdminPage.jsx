@@ -1,9 +1,10 @@
 import React from 'react';
+import AddMovies from '../AddMovies/AddMovies';
 
 const AdminPage = () => {
   return (
     <div>
-      ADMIN
+      <AddMovies/>
     </div>
   );
 };

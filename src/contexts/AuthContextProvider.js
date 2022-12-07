@@ -22,7 +22,7 @@ const AuthContextProvider = ({ children }) => {
     const clearErrors = () => {
         setEmailError("");
         setPasswordError("");
-    };
+    };  
 
     const handleSignup = () => {
         clearErrors();
@@ -42,7 +42,7 @@ const AuthContextProvider = ({ children }) => {
             });
     };
 
-    const handleLogin = () => {
+    const handleSignin = () => {
         clearErrors();
         fire.auth()
             .signInWithEmailAndPassword(email, password)
@@ -61,7 +61,7 @@ const AuthContextProvider = ({ children }) => {
             });
     };
 
-    const handleLogout = () => {
+    const handleSignout = () => {
         fire.auth().signOut();
     };
 
@@ -93,8 +93,8 @@ const AuthContextProvider = ({ children }) => {
         setEmail,
         setHasAccount,
 
-        handleLogin,
-        handleLogout,
+        handleSignin,
+        handleSignout,
         handleSignup,
     };
     return (

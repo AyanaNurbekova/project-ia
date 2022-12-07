@@ -12,7 +12,8 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import './Auth.css';
 import { useNavigate } from 'react-router-dom';
-
+import { Toolbar } from '@mui/material';
+import { useAuth } from '../../contexts/AuthContextProvider';
 
 function Netflix(props) {
   return (
@@ -27,7 +28,11 @@ function Netflix(props) {
 const theme = createTheme();
 
 export default function SignUp() {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();  
+  const {
+    handleSignup,
+  } = useAuth();
+
   
   
   const handleSubmit = (event) => {
@@ -40,7 +45,31 @@ export default function SignUp() {
   };
 
   return (
+    
     <ThemeProvider theme={theme}>
+      <Box
+       className='navbar'
+       position="relative">
+        <Toolbar sx={{
+          display: 'flex', 
+          justifyContent:'space-between'
+          }} >
+
+          <Box>
+          <Typography 
+           component="div"
+           sx={{ 
+           display: 'flex', 
+           color: 'red', 
+           fontSize: '35px',
+           fontWeight: 'bold',
+           justifyContent: 'start' 
+           }}>
+           REACTFLIX
+          </Typography>
+         </Box>
+        </Toolbar>
+      </Box>
       <Box>
         <Container 
          component="main" 
@@ -73,7 +102,7 @@ export default function SignUp() {
             sx={{ mt: 3 }}>
 
              <Grid container spacing={2}>
-               <Grid item xs={12} >
+               <Grid item xs={12} sm={6}>
                  <TextField  className='grid-block'
                    color='background'
                    autoComplete="given-name"
@@ -84,7 +113,7 @@ export default function SignUp() {
                    autoFocus
                  />
                </Grid>
-               <Grid item xs={12} >
+               <Grid item xs={12} sm={6} >
                  <TextField className='grid-block'
                    fullWidth
                    color='background'
@@ -130,8 +159,9 @@ export default function SignUp() {
                variant="contained"
                sx={{ mt: 2, mb: 2 }}
                onClick={() => {
-                navigate('/')
-               }}
+                handleSignup();
+                navigate('/main');
+              }}
              >
                SIGN UP
              </Button>

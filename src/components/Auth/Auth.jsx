@@ -4,7 +4,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import { Link } from '@mui/material';
+import { Link, Toolbar } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -12,8 +12,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import './Auth.css'
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../contexts/AuthContexProvider';
-import SignUp from './SignUp';
+import { useAuth } from '../../contexts/AuthContextProvider';
 
 function Netflix(props) {
   return (
@@ -35,12 +34,9 @@ export default function SignIn() {
     password,
     emailError,
     passwordError,
-    hasAccount,
     setPassword,
     setEmail,
-    setHasAccount,
-    handleLogin,
-    handleSignup,
+    handleSignin,
   } = useAuth();
   
   const handleSubmit = (event) => {
@@ -54,6 +50,29 @@ export default function SignIn() {
 
   return (
     <Box className='auth'> 
+       <Box
+       className='navbar'
+       position="relative">
+        <Toolbar sx={{
+          display: 'flex', 
+          justifyContent:'space-between'
+          }} >
+
+          <Box>
+          <Typography 
+           component="div"
+           sx={{ 
+           display: 'flex', 
+           color: 'red', 
+           fontSize: '35px',
+           fontWeight: 'bold',
+           justifyContent: 'start' 
+           }}>
+           REACTFLIX
+          </Typography>
+         </Box>
+        </Toolbar>
+      </Box>
       <ThemeProvider theme={theme}>
         <Container component="main" maxWidth="xs">
           <CssBaseline />
@@ -120,15 +139,15 @@ export default function SignIn() {
                 control={<Checkbox value="remember" color="error" />}
                 label="Remember me"
               /> 
-              {hasAccount ? (
+             
                 <Button
                   color='error'
                   type="submit"
                   fullWidth
                   variant="contained"
                   onClick={() => {
-                    handleLogin();
-                    navigate('/auth');
+                    handleSignin();
+                    navigate('/main');
                   }}
                   sx={{
                    mt: 2, 
@@ -137,38 +156,20 @@ export default function SignIn() {
                 >
                   SIGN IN
                 </Button>
-              ): (
-                <Button
-                  color='error'
-                  type="submit"
-                  fullWidth
-                  variant="contained"
-                  sx={{ mt: 2, mb: 2 }}
-                  onClick={handleSignup}
-                >
-                  SIGN UP
-                </Button>
-              )}
               
 
               <Grid container
                justifyContent='center'>
 
                 <Grid item>
-                  {hasAccount? (
-                  <Link onClick={() => setHasAccount(!hasAccount)}>
+                  <Link onClick={() => navigate('/signup')}>
                   {"New to Netflix? Sign up now."}
                   </Link>
-                  ) : (
-                   <Link onClick={() => setHasAccount(!hasAccount)}>
-                   {'Already have an account? Log In'}
-                   </Link>
-                  )}
+                 
                 </Grid>
               </Grid>
             </Box>
             <Netflix mb={3}/>
-            <SignUp/>
           </Box>
         </Container>
       </ThemeProvider>
