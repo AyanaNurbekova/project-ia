@@ -1,11 +1,9 @@
-import { InsertEmoticon } from '@mui/icons-material';
-import { Button, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useContext, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { moviesContext } from '../../contexts/MoviesContextProvider';
 const Player = () => {
-    const {getOneMovies, getData, oneMovies} = useContext(moviesContext)
+    const {getOneMovies, oneMovies} = useContext(moviesContext)
     const {id} = useParams()
     useEffect(()=> {
         getOneMovies(id);

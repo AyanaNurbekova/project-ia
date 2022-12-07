@@ -44,12 +44,10 @@ const Footer = () => {
     // },
   // });
 
-
-
-
   return (
 
     <Box sx={{
+      borderBottom: '8px solid #222',
       backgroundColor: '#141414',
       }}
     >
@@ -57,15 +55,15 @@ const Footer = () => {
         sx={{
         display: 'block',
         backgroundColor: '#141414',
-        margin: '20px auto 0',
-        maxWidth: '980px',
+        margin: 'auto ',
+        maxWidth: '990px',
         padding: '0 4%',
         fontFamily: 'Netflix Sans,Helvetica Neue,Segoe UI,Roboto,Ubuntu,sans-serif',
       }}>
         <List className='icons'
         sx={{
           display: 'flex',
-          width: '10%',
+          width: '15%',
           
         }}
         >
@@ -102,14 +100,16 @@ const Footer = () => {
           // },
           justifyContent: 'space-between',
         }}>
-          <Box className='row1'>
+          <Box
+           
+            className='row1'>
             <List
               sx={{
               alignItems: 'flex-start',
               display:'flex',
               flexDirection: 'row',
               flexWrap:'wrap',
-              fontSize:'13px',
+              fontSize:'18px',
               margin:'0 0 10px',
               padding:'0',
               // sx={{
@@ -148,7 +148,7 @@ const Footer = () => {
               display:'flex',
               flexDirection: 'row',
               flexWrap:'wrap',
-              fontSize:'13px',
+              fontSize:'18px',
               margin:'0 0 10px',
               padding:'0',
               // sx={{
@@ -187,7 +187,7 @@ const Footer = () => {
               display:'flex',
               flexDirection: 'row',
               flexWrap:'wrap',
-              fontSize:'13px',
+              fontSize:'18px',
               margin:'0 0 10px',
               padding:'0',
               // sx={{
@@ -226,7 +226,7 @@ const Footer = () => {
               display:'flex',
               flexDirection: 'row',
               flexWrap:'wrap',
-              fontSize:'13px',
+              fontSize:'18px',
               margin:'0 0 10px',
               padding:'0',
               // sx={{
@@ -266,7 +266,7 @@ const Footer = () => {
             background: 'transparent',
             border: '1px solid grey',
             color: 'grey',
-            fontSize: '13px',
+            fontSize: '16px',
             padding: '2',
             fontFamily: 'Netflix Sans,Helvetica Neue,Segoe UI,Roboto,Ubuntu,sans-serif'
           }}
@@ -283,7 +283,7 @@ const Footer = () => {
           <Typography
           sx={{
             color:'grey',
-            fontSize:'10px', 
+            fontSize:'16px', 
           }}>
             {' '}
             © 1997-2022 Netflix, Inc.

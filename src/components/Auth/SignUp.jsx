@@ -10,7 +10,10 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
+import './Auth.css';
+import { useNavigate } from 'react-router-dom';
+import { Toolbar } from '@mui/material';
+import { useAuth } from '../../contexts/AuthContextProvider';
 
 function Netflix(props) {
   return (
@@ -25,6 +28,13 @@ function Netflix(props) {
 const theme = createTheme();
 
 export default function SignUp() {
+  const navigate = useNavigate();  
+  const {
+    handleSignup,
+  } = useAuth();
+
+  
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -35,7 +45,31 @@ export default function SignUp() {
   };
 
   return (
+    
     <ThemeProvider theme={theme}>
+      <Box
+       className='navbar'
+       position="relative">
+        <Toolbar sx={{
+          display: 'flex', 
+          justifyContent:'space-between'
+          }} >
+
+          <Box>
+          <Typography 
+           component="div"
+           sx={{ 
+           display: 'flex', 
+           color: 'red', 
+           fontSize: '35px',
+           fontWeight: 'bold',
+           justifyContent: 'start' 
+           }}>
+           REACTFLIX
+          </Typography>
+         </Box>
+        </Toolbar>
+      </Box>
       <Box>
         <Container 
          component="main" 
@@ -68,7 +102,7 @@ export default function SignUp() {
             sx={{ mt: 3 }}>
 
              <Grid container spacing={2}>
-               <Grid item xs={12} >
+               <Grid item xs={12} sm={6}>
                  <TextField  className='grid-block'
                    color='background'
                    autoComplete="given-name"
@@ -79,7 +113,7 @@ export default function SignUp() {
                    autoFocus
                  />
                </Grid>
-               <Grid item xs={12} >
+               <Grid item xs={12} sm={6} >
                  <TextField className='grid-block'
                    fullWidth
                    color='background'
@@ -124,13 +158,18 @@ export default function SignUp() {
                fullWidth
                variant="contained"
                sx={{ mt: 2, mb: 2 }}
+               onClick={() => {
+                handleSignup();
+                navigate('/main');
+              }}
              >
                SIGN UP
              </Button>
              <Grid container justifyContent="center" >
                <Grid item>
                  <Link 
-                 href="/#" 
+                 onClick={() => navigate ("/auth")}
+                 href="/auth" 
                  variant="body2">
                    Already have an account? Sign in
                  </Link>
