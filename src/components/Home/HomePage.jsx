@@ -6,7 +6,7 @@ import Navbar from '../Navbar/Navbar';
 
 export default function HomePage () {
   return (
-    <Box >
+    <Box className='homepage-bg'>
         <Navbar/>
       <Box 
        className='text-main'

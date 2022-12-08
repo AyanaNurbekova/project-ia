@@ -30,8 +30,8 @@ async function getOneMovies(id){
 }
 
 //!update   
-async function updateMovies(id, editMovies){
-    await axios.patch(`${JSON_API_MOVIES}/${id}`, editMovies)
+async function updateMovies(id, editedMovies){
+    await axios.put(`${JSON_API_MOVIES}/${id}`, editedMovies)
     getData()
 }
 

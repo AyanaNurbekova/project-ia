@@ -16,11 +16,11 @@ const MoviesCard = ({item}) => {
   const navigate = useNavigate()
 
   const [descr, setDescr] = useState(false)
-  console.log(item.description);
   const admin = 'adminxxx@gmail.com'
 
   return (
-    <Box 
+    <Box className='movies-bg'>  
+     <Box 
         className='card' sx={{ 
         mt: 7,
         width: '340px',
@@ -71,11 +71,9 @@ const MoviesCard = ({item}) => {
             <Button onClick={()=> {navigate(`/edit/${item.id}`); updateMovies(id)}} sx={{border: '1px solid green', color: '#fff', backgroundColor: '#181818', padding: '2px', width: '140px'}}>edit</Button>
             <Button onClick={()=> {deleteMovies(item.id); navigate('/movies')}} sx={{border: '1px solid red', color: '#fff', backgroundColor: '#181818', padding: '2px', width: '140px'}}>delete</Button>
           </Box>)}
-          
-          
         </Box>
       </Box>
-      
+    </Box>
   );
 };
 

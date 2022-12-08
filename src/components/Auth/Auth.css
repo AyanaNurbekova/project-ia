@@ -1,10 +1,18 @@
-
- body {
-  background: #181818;
-} 
+.auth{
+  /* background-color: #141414; */
+  background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/0678255b-ecfd-4775-999a-0680d539f07c/1d7fbb26-9ab3-4978-a66d-cb0e17c2a0e3/KG-en-20221128-popsignuptwoweeks-perspective_alpha_website_large.jpg") ;
   
+  
+}
+
+.sign-up{
+  /* background-color: #141414; */
+  background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/0678255b-ecfd-4775-999a-0680d539f07c/1d7fbb26-9ab3-4978-a66d-cb0e17c2a0e3/KG-en-20221128-popsignuptwoweeks-perspective_alpha_website_large.jpg") ;
+  
+}
 .signin-box{
   background-color: rgba(0,0,0,.75);
+  
 }
 .signup-box{
   background-color: rgba(0,0,0,.75);

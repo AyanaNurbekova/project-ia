@@ -4,11 +4,6 @@
     -webkit-transform: scale(1.4);  
     transform: scale(1.2);
   }
-  :root {
-    --color-primary-400: rgba(255,255,255,0.5);
-    --color-primary-600: rgba(255,255,255,0.8);
-    --color-primary-700: rgba(255,255,255,1);
-  }
   
   .card-preview-video {
     position: relative;
