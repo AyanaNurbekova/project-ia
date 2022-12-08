@@ -95,14 +95,6 @@ export default function Reactflix () {
           Ready to watch? Enter your email to create or restart your membership.
         </Typography>
 
-        {/* <Button  */}
-        {/* //  onClick={() => navigate('/signup')} */}
-        {/* //  sx={{border:'1px solid red', */}
-        {/* //  bgcolor:'black',}} */}
-        {/* //  color="error" */}
-        {/* //  edge="center" */}
-        {/* //  >SIGN UP */}
-        {/* </Button> */}
 
       </Box>
 
@@ -134,7 +126,7 @@ export default function Reactflix () {
                <Box className='img'>
                  <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt="TV" />
                  <Box className='video'>
-                 <video className="cart-video" data-uia="our-story-card-video" autoplay="" playsinline="" muted="" loop="">
+                 <video className="cart-video" data-uia="our-story-card-video" autoPlay="" playsInline="" muted="" loop="">
                    <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v" type="video/mp4"/></video>
                  </Box>
                </Box>
@@ -149,7 +141,7 @@ export default function Reactflix () {
            <Box className="text-box-right">
              <Typography
              sx={{
-              fontSize: '3.125rem',
+              fontSize: '3rem',
               lineHeight: '1.1',
               marginBottom: '0.5rem',
             }}> Download your shows to watch offline.</Typography>
@@ -178,32 +170,32 @@ export default function Reactflix () {
        </Box>
 
 
-       <Box className='box-1'>
-         <Box className='box-box-1'>
-           <Box className='text-box-left'>
+       <Box className='box-3'>
+         <Box className='box-box-3'>
+           <Box className='text-box-left-3'>
             <Typography 
             sx={{
                fontSize: '3.125rem',
                lineHeight: '1.1',
                marginBottom: '0.5rem',
              }}>
-             Enjoy on your TV.
+             Watch everywhere.
              </Typography >
              <Typography 
              sx={{
                fontSize: '1.625rem',
              }}
              >
-             Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.
+             Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more.
              </Typography>
            </Box>
-           <Box className='right-box'>
-            <Box className='animation-1'>
+           <Box className='right-box-3'>
+            <Box className='animation-3'>
                <Box className='img'>
-                 <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt="TV" />
+                 <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile.png" alt="TV" />
                  <Box className='video'>
-                 <video className="cart-video" data-uia="our-story-card-video" autoplay="" playsinline="" muted="" loop="">
-                   <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v" type="video/mp4"/>
+                 <video className="cart-video-3" data-uia="our-story-card-video" autoPlay="" playsInline="" muted="" loop="">
+                   <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices.m4v" type="video/mp4"/>
                    </video>
                  </Box>
                </Box>
@@ -213,7 +205,7 @@ export default function Reactflix () {
        </Box>
 
 
-       <Box className="box2" >
+       {/* <Box className="box2" >
           <Box className="box-box-2">
             <Box className="text-box-right">
               <Typography
@@ -243,7 +235,7 @@ export default function Reactflix () {
              </Box>
            </Box>
          </Box>
-        </Box>
+        </Box> */}
       </Box>
 
 

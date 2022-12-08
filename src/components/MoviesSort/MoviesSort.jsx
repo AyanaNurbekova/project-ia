@@ -50,7 +50,11 @@ export default function MoviesSort() {
         >
           Sort By Type
         </InputLabel>
-        <NativeSelect sx={{color: 'red', fontSize: '20px'}}
+        <NativeSelect sx={{
+          color: 'red', 
+          fontSize: '20px',
+          
+        }}
           onChange={(e) => fetchByParams('type', e.target.value)}
           defaultValue={'All'}
           inputProps={{

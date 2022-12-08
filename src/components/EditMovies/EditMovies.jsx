@@ -72,12 +72,12 @@ return (
         >
             <Typography
                 sx={{
-                    color: "red",
+                    color: "white",
                     fontSize: "40px",
                     fontWeight: 'bold',
                 }}
             >
-                Edit MOVIES
+                EDIT MOVIES
             </Typography>
             
             <Box

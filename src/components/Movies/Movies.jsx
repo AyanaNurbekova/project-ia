@@ -14,9 +14,9 @@ const Movies = () => {
     
     return (
         <Box>
+          <Navbar/>
         <Box sx={{marginTop: '10px', backgroundColor: '#181818', color: '#fff'}}><MoviesSort /></Box>
         <Box sx={{display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap'}}>
-          <Navbar/>
         {data ? (currentData().map((item)=>(
             <MoviesCard key={item.id} item={item} />        
         ))) : (

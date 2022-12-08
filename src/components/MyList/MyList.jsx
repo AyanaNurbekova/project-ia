@@ -3,6 +3,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useContext } from 'react';
 import { cardContext } from '../../contexts/MoviesCardContext';
+import Navbar from '../Navbar/Navbar';
 import MyListCard from './MyListCard';
 
 const MyList = () => {
@@ -12,11 +13,14 @@ const MyList = () => {
         
     },[])
  console.log(cartData);
-    return (
+    return ( 
+    <Box>
+       <Navbar/>
         <Box sx={{display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap', }}>
         {cartData ? (cartData.map((item)=>(
             <MyListCard key={item.id} item={item} />        
-         ))) : (<></>)}
+            ))) : (<></>)}
+        </Box>
     </Box>
     );
 };
