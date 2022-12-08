@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { cardContext } from '../../contexts/MoviesCardContext';
@@ -15,7 +15,6 @@ const MoviesCard = ({item}) => {
   const navigate = useNavigate()
 
   const [descr, setDescr] = useState(false)
-  console.log(item.description);
   
   return (
     <Box 

@@ -1,10 +1,9 @@
-/* @import url('https://fonts.cdnfonts.com/css/netflix-font'); */
 body {
   margin: 0;
   font-family: Netflix Sans,Helvetica Neue,Segoe UI,Roboto,Ubuntu,sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(30, 30, 31)
+  background-color: #181818;
 }
 
 code {

@@ -134,7 +134,7 @@ export default function Reactflix () {
                <Box className='img'>
                  <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt="TV" />
                  <Box className='video'>
-                 <video className="cart-video" data-uia="our-story-card-video" autoplay="" playsinline="" muted="" loop="">
+                 <video className="cart-video" data-uia="our-story-card-video" autoPlay="" playsInline="" muted="" loop="">
                    <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v" type="video/mp4"/></video>
                  </Box>
                </Box>
@@ -202,7 +202,7 @@ export default function Reactflix () {
                <Box className='img'>
                  <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt="TV" />
                  <Box className='video'>
-                 <video className="cart-video" data-uia="our-story-card-video" autoplay="" playsinline="" muted="" loop="">
+                 <video className="cart-video" data-uia="our-story-card-video" autoPlay="" playsInline="" muted="" loop="">
                    <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v" type="video/mp4"/>
                    </video>
                  </Box>

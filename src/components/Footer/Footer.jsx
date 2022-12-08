@@ -286,7 +286,7 @@ const Footer = () => {
             fontSize:'16px', 
           }}>
             {' '}
-            © 1997-2022 Netflix, Inc.
+            © 2021 Reactflix, Inc.
           </Typography>
         </Box>
         
