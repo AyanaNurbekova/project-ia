@@ -45,14 +45,18 @@ export default function SignUp() {
   };
 
   return (
-    
+    <Box className='sign-up'
+    sx={{
+      weigth:'100%',
+      height:'750px',
+    }}>
     <ThemeProvider theme={theme}>
       <Box
        className='navbar'
        position="relative">
         <Toolbar sx={{
           display: 'flex', 
-          justifyContent:'space-between'
+          justifyContent:'space-between',
           }} >
 
           <Box>
@@ -77,7 +81,7 @@ export default function SignUp() {
          <CssBaseline />
           <Box className='signup-box'
            sx={{
-           mb:8, mt:8,
+           marginTop:'80px',
            color: 'white',
            border: '2px solid black',
            padding:'5px 50px 0',
@@ -131,7 +135,7 @@ export default function SignUp() {
                    label="Email Address"
                    name="email"
                    autoComplete="email"
-                 />
+                   />
                </Grid>
                <Grid item xs={12}>
                  <TextField className='grid-block'
@@ -162,7 +166,7 @@ export default function SignUp() {
                 handleSignup();
                 navigate('/main');
               }}
-             >
+              >
                SIGN UP
              </Button>
              <Grid container justifyContent="center" >
@@ -181,6 +185,7 @@ export default function SignUp() {
         </Container>
       </Box>    
     </ThemeProvider>
+   </Box>
   );
 }
 

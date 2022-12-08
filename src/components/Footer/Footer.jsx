@@ -49,6 +49,7 @@ const Footer = () => {
     <Box sx={{
       borderBottom: '8px solid #222',
       backgroundColor: '#141414',
+      borderTop:'8px solid #222',
       }}
     >
       <Box className='footer-bigblock'
@@ -57,7 +58,7 @@ const Footer = () => {
         backgroundColor: '#141414',
         margin: 'auto ',
         maxWidth: '990px',
-        padding: '0 4%',
+        padding: '20px 4%',
         fontFamily: 'Netflix Sans,Helvetica Neue,Segoe UI,Roboto,Ubuntu,sans-serif',
       }}>
         <List className='icons'

@@ -14,7 +14,7 @@ const EditMovies = () => {
     const params = useParams();
     const navigate = useNavigate();
 
-    const {getOneMovies, updateMovies, oneMovies, editMovies} = useContext(moviesContext);
+    const {getOneMovies, updateMovies, oneMovies, editedMovies} = useContext(moviesContext);
 console.log(updateMovies);
     useEffect(()=>{
         getOneMovies(params.id)
@@ -169,7 +169,7 @@ return (
                 />
                 
                 <Button
-                    onClick={()=> {updateMovies(); navigate('/movies')}}
+                    onClick={()=> {handleValues(); navigate('/movies')}}
                     sx={{
                         borderColor: "black",
                         backgroundColor: "black",

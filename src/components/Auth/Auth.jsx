@@ -49,37 +49,40 @@ export default function SignIn() {
   };
 
   return (
-    <Box className='auth'> 
-       <Box
-       className='navbar'
-       position="relative">
-        <Toolbar sx={{
-          display: 'flex', 
-          justifyContent:'space-between'
-          }} >
-
-          <Box>
-          <Typography 
-           component="div"
-           sx={{ 
-           display: 'flex', 
-           color: 'red', 
-           fontSize: '35px',
-           fontWeight: 'bold',
-           justifyContent: 'start' 
-           }}>
-           REACTFLIX
-          </Typography>
-         </Box>
-        </Toolbar>
-      </Box>
+    <Box className='auth'
+    sx={{
+      weigth:'100%',
+      height:'750px',
+    }}>                       
       <ThemeProvider theme={theme}>
-        <Container component="main" maxWidth="xs">
+        <Box className='navbar1' position="relative">
+          <Toolbar sx={{
+            display: 'flex', 
+            justifyContent:'space-between',
+           }}
+          >
+            <Box>
+              <Typography 
+                component="div"
+                sx={{ 
+                display: 'flex', 
+                color: 'red', 
+                fontSize: '35px',
+                fontWeight: 'bold',
+                justifyContent: 'start' 
+                }}>
+               REACTFLIX
+              </Typography>
+            </Box>
+          </Toolbar>
+        </Box>
+
+        <Container maxWidth="xs">
           <CssBaseline />
           <Box
            className='signin-box'
             sx={{
-              mb:8, mt:8,
+              mt:'100px',
               color: 'white',
               border: '2px solid black',
               padding:'5px 50px 0',

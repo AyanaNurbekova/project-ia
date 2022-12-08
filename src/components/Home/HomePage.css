@@ -1,7 +1,6 @@
-
-
-body{ 
-  font-family: Netflix Sans,Helvetica Neue,Segoe UI,Roboto,Ubuntu,sans-serif;
+.homepage-bg{
+  background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/0678255b-ecfd-4775-999a-0680d539f07c/1d7fbb26-9ab3-4978-a66d-cb0e17c2a0e3/KG-en-20221128-popsignuptwoweeks-perspective_alpha_website_large.jpg") ;
+  
 }
 
 .text-main{
@@ -170,7 +169,7 @@ z-index: 2;
 
 
 .btn-downloading{
-  background: url('https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/download-icon.gif') 50% no-repeat;
+  /* background: url('https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/download-icon.gif') 50% no-repeat; */
     background-size: 100%;
     content: "";
     display: block;

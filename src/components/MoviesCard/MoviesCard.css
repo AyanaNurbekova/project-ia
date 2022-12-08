@@ -1,15 +1,13 @@
+.movies-bg{
+  background-color: #141414;
+}
+
 .card:hover {
         transition: transform .3s;
         -ms-transform: scale(1.9);
         -webkit-transform: scale(1.0);  
         transform: scale(1.5);
       }
-      :root {
-        --color-primary-400: rgba(255,255,255,0.5);
-        --color-primary-600: rgba(255,255,255,0.8);
-        --color-primary-700: rgba(255,255,255,1);
-      }
-      
       .card-preview-video {
         position: relative;
         height: 210px;

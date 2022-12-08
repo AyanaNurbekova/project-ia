@@ -9,7 +9,6 @@ import InputBase from '@mui/material/InputBase';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import NotificationsIcon from '@mui/icons-material/Notifications';
@@ -152,7 +151,7 @@ export default function Navbar() {
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
           color="inherit"
-        > Profil
+        > <p>Profile</p>  
           <AccountCircle />
         </IconButton>
       
@@ -163,23 +162,14 @@ export default function Navbar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar sx={{backgroundColor: '#141414'}} position="static">
+      <AppBar sx={{
+        borderBottom: '8px solid #222',
+        backgroundColor: '#141414'
+        }} position="static">
 
 
-       {/*  МЕНЮ ДЛЯ NETFLIX, HOME, MYLIST, MOVIES, ADD MOVIES (Т.Е КНОПКИ) */}
+       {/*  МЕНЮ ДЛЯ NETFLIX, HOME, MYLIST, MOVIES, ADD MOVIES  */}
         <Toolbar> 
-          {/*  КНОПКА БУРГЕР - ИКОНКА */}
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton> 
-          {/* !!! */}
-
          {/* NETFLIX ICON */}
 
           <Typography
@@ -253,11 +243,9 @@ export default function Navbar() {
             My List
           </Typography>
           </Link>
-
-           
           <Box sx={{ flexGrow: 1 }} />
 
-          {/* --------------------------------------------------  БЛОК С ПОИСКОМ, УВЕДОМЛЕНИЕМ И ПРОфиЛЬ-------------- */}
+          {/* ------------------------------- БЛОК  ПОИСК, УВЕДОМЛЕНИЕ И ПРОфиЛЬ-------------- */}
           <Box sx={{ display: { xs: 'none', md: 'flex' },justifyContent:'center',alignItems: 'center' }}>
 
            <Search>

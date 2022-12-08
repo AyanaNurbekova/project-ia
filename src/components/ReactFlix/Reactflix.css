@@ -1,3 +1,8 @@
+.reactflix-bg{
+  background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/0678255b-ecfd-4775-999a-0680d539f07c/1d7fbb26-9ab3-4978-a66d-cb0e17c2a0e3/KG-en-20221128-popsignuptwoweeks-perspective_alpha_website_large.jpg") ;
+  
+}
+
 .navbar{
   background: rgba(0,0,0,.4);
   background-image: linear-gradient(0deg,rgba(0,0,0,.0) 0,transparent 60%,rgba(0,0,0,.0));
@@ -6,10 +11,6 @@
   transition: background-color .6s;
   width: 100%;
   z-index: 10;
-}
-
-body{ 
-  font-family: Netflix Sans,Helvetica Neue,Segoe UI,Roboto,Ubuntu,sans-serif;
 }
 
 .text-main{
@@ -98,15 +99,12 @@ body{
     width: 100%;
 }
 
-/* box-2 start */
 
 .box2{
   background:black;
   border-bottom: 8px solid #222;
   color: #fff;
-  /* padding: 5px 45px 40px; */
   padding: 75px 45;
-  /* position: relative;  */
 
 }
 
@@ -126,14 +124,10 @@ body{
   margin: 0 auto;
   height: 100%;
   width: 51%;
-  
-  /* z-index: 3; */
-
 }
 
 
 .left-box-2{ 
-/* display: block; */
 display: flex;
 box-sizing: border-box;
 flex: 0 1 auto;
@@ -181,7 +175,6 @@ z-index: 2;
 
 
 .btn-downloading{
-  background: url('https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/download-icon.gif') 50% no-repeat;
     background-size: 100%;
     content: "";
     display: block;
@@ -193,17 +186,12 @@ z-index: 2;
     width: 3em;
 }
 
-
-
-/*  box-3  */
-
 .box-3{
   border-top: 8px solid #222;
   background:black;
   border-bottom: 8px solid #222;
   color: #fff;
   padding: 75px 45px;
-  /* padding: 5px 45px 40px; */
   position: relative; 
 }
   
@@ -263,16 +251,6 @@ z-index: 2;
   width: 83%;
   z-index: -2;
 } 
-
-/* .our-story-card-video{ */
-  /* display: inline-block; */
-  /* vertical-align: baseline; */
-  /* position: relative ; */
-  /* right: 90px; */
-  /* bottom: 120px; */
-  /* z-index: 3; */
-/* } */
-/*  */
 
 
 

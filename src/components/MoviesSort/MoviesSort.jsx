@@ -21,27 +21,7 @@ export default function MoviesSort() {
         },
       }}
     >
-      {/* <FormControl fullWidth>
-        <InputLabel
-          variant='standard'
-          htmlFor='uncontrolled-native'
-          sx={{ color: 'red' }}
-        >
-          Sort By Price
-        </InputLabel>
-        <NativeSelect sx={{color: 'red', fontSize: '20px'}}
-          onChange={(e) => fetchByParams('_sort', e.target.value)}
-          defaultValue={'All'}
-          inputProps={{
-            name: 'sort',
-          }}
-        >
-          <option value={'All'}>All</option>
-          <option value={'asc'}>Low to High</option>
-          <option value={'desc'}>High to Low</option>
-        </NativeSelect>
-      </FormControl> */}
-
+      
       <FormControl>
         <InputLabel
           variant='standard'

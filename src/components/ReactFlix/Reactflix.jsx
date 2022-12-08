@@ -10,12 +10,12 @@ export default function Reactflix () {
   const navigate = useNavigate();
 
   return (
-    <Box >
+    <Box className='reactflix-bg'>
       <Box
        className='navbar'
        position="relative">
         <Toolbar sx={{
-          display: 'flex', 
+          display: 'flex',
           justifyContent:'space-between'
           }} >
 
