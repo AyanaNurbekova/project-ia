@@ -10,14 +10,14 @@ import MoviesCardContext from './contexts/MoviesCardContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
+   <MoviesCardContext>
     <MoviesContextProvider>
       <AuthContextProvider>
         <NavabarContextProvider>
-          <MoviesCardContext>
-            <App />
-          </MoviesCardContext>
+          <App />
         </NavabarContextProvider>
       </AuthContextProvider>
     </MoviesContextProvider>
+   </MoviesCardContext>
  </BrowserRouter>
 );

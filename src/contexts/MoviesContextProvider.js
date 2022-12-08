@@ -13,15 +13,14 @@ const MoviesContextProvider = ({children}) => {
     const [data, setData] = useState([])
     const [oneMovies, setOneMovies] = useState({})
 
-    async function addMovies(obj) {
-    await axios.post(JSON_API_MOVIES, obj);
+    async function addMovies(data) {
+    await axios.post(JSON_API_MOVIES, data);
     getData();
 }
 //!read
 async function getData(){
     let {data} = await axios.get(`${JSON_API_MOVIES}/${window.location.search}`);
     setData(data);
-    console.log(data);
 }
 
 //! get one
@@ -31,8 +30,8 @@ async function getOneMovies(id){
 }
 
 //!update   
-async function updateMovies(id, editedMovies){
-    await axios.patch(`${JSON_API_MOVIES}/${id}`, editedMovies)//<=
+async function updateMovies(id, editMovies){
+    await axios.patch(`${JSON_API_MOVIES}/${id}`, editMovies)
     getData()
 }
 

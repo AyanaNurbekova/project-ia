@@ -11,6 +11,7 @@ const Movies = () => {
     useEffect(()=>{
         getData();
     }, []);
+    // console.log(currentData);
     
     return (
         <Box>

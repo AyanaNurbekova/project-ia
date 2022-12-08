@@ -7,7 +7,7 @@ import './MyListCard.css'
 
 const MyListCard = ({item}) => {
     const navigate = useNavigate()
-    const {deleteFilmToCart, addFilmToCart, getFilmToCart} = useContext(cardContext)
+    const {deleteFilmToCart, getFilmToCart} = useContext(cardContext)
     const {oneMovies} = useContext(moviesContext)
     const {id} = useParams()
     const [descr, setDescr] = useState(false)
@@ -33,7 +33,7 @@ const MyListCard = ({item}) => {
               <svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z" fill="currentColor"></path></svg>
             </button>
       
-            <button style={{width: '50px', height: '50px'}} onClick={() => {deleteFilmToCart(item)}} className='btn btn-icon btn-secondary'>
+            <button style={{width: '50px', height: '50px'}} onClick={() => {deleteFilmToCart(item.id)}} className='btn btn-icon btn-secondary'>
               <svg viewBox="0 0 24 24"><path d="M13 11h8v2h-8v8h-2v-8H3v-2h8V3h2v8z" fill="currentColor"></path></svg>
             </button>
       

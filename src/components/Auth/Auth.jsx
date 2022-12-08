@@ -19,7 +19,7 @@ function Netflix(props) {
     <Typography 
     variant="body2" 
     align="center" {...props}>
-      {'© 1997-2022 Netflix, Inc.'}
+      {'© 2021 Reactflix, Inc.'}
     </Typography>
   );
 }
@@ -163,7 +163,7 @@ export default function SignIn() {
 
                 <Grid item>
                   <Link onClick={() => navigate('/signup')}>
-                  {"New to Netflix? Sign up now."}
+                  {"New to Reactflix? Sign up now."}
                   </Link>
                  
                 </Grid>

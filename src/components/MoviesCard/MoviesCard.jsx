@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContextProvider';
@@ -18,6 +18,7 @@ const MoviesCard = ({item}) => {
   const [descr, setDescr] = useState(false)
   console.log(item.description);
   const admin = 'adminxxx@gmail.com'
+
   return (
     <Box 
         className='card' sx={{ 

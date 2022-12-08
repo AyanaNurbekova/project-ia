@@ -13,9 +13,10 @@ const MyList = () => {
         
     },[])
  console.log(cartData);
-    return ( 
-    <Box>
-       <Navbar/>
+
+    return (
+     <Box sx={{marginBottom: '105px'}}>
+        <Navbar />
         <Box sx={{display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap', }}>
         {cartData ? (cartData.map((item)=>(
             <MyListCard key={item.id} item={item} />        

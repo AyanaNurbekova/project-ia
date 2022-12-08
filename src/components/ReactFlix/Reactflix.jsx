@@ -194,8 +194,8 @@ export default function Reactflix () {
                <Box className='img'>
                  <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile.png" alt="TV" />
                  <Box className='video'>
-                 <video className="cart-video-3" data-uia="our-story-card-video" autoPlay="" playsInline="" muted="" loop="">
-                   <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices.m4v" type="video/mp4"/>
+                   <video className="cart-video-3" data-uia="our-story-card-video" autoPlay="" playsInline="" muted="" loop="">
+                     <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices.m4v" type="video/mp4"/>
                    </video>
                  </Box>
                </Box>

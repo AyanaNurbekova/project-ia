@@ -4,7 +4,6 @@ import { Form, useNavigate, useParams } from 'react-router-dom';
 import { moviesContext } from '../../contexts/MoviesContextProvider';
 
 const EditMovies = () => {
-    
     const [name, setName] = useState('')
     const [year, setYear] = useState(0)
     const [description, setDescription] = useState('')
@@ -15,7 +14,7 @@ const EditMovies = () => {
     const params = useParams();
     const navigate = useNavigate();
 
-    const {getOneMovies, updateMovies, oneMovies} = useContext(moviesContext);
+    const {getOneMovies, updateMovies, oneMovies, editMovies} = useContext(moviesContext);
 console.log(updateMovies);
     useEffect(()=>{
         getOneMovies(params.id)
@@ -43,12 +42,7 @@ console.log(updateMovies);
             movies
         };
 
-        // if(!name.trim() || !year.trim() || !description.trim() || !picture.trim() || !type.trim() || !movies.trim()){
-        //     alert('заполните поле')
-        //     return;
-        // }
         updateMovies(params.id, editMovies)
-
         setName('')
         setYear(0)
         setDescription('')
@@ -175,7 +169,7 @@ return (
                 />
                 
                 <Button
-                    onClick={()=> {handleValues(); navigate('/movies')}}
+                    onClick={()=> {updateMovies(); navigate('/movies')}}
                     sx={{
                         borderColor: "black",
                         backgroundColor: "black",

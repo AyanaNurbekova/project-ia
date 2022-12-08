@@ -20,7 +20,7 @@ function Netflix(props) {
     <Typography 
     variant="body2" 
     align="center" {...props}>
-      {'© 1997-2022 Netflix, Inc.'}
+      {'© 2021 Reactflix, Inc.'}
     </Typography>
   );
 }
