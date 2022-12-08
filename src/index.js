@@ -6,11 +6,11 @@ import MoviesContextProvider from './contexts/MoviesContextProvider';
 import NavabarContextProvider from './contexts/NavbarContextProvider';
 import AuthContextProvider from './contexts/AuthContextProvider';
 import MoviesCardContext from './contexts/MoviesCardContext';
-// 
+  
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-          <MoviesCardContext>
+   <MoviesCardContext>
     <MoviesContextProvider>
       <AuthContextProvider>
         <NavabarContextProvider>
@@ -18,6 +18,6 @@ root.render(
         </NavabarContextProvider>
       </AuthContextProvider>
     </MoviesContextProvider>
-          </MoviesCardContext>
+   </MoviesCardContext>
  </BrowserRouter>
 );

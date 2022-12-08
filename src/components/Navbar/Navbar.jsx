@@ -12,14 +12,10 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-// import MailIcon from '@mui/icons-material/Mail';/
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-// import { Link } from 'react-router-dom';
-// import { moviesContext } from '../../contexts/MoviesContextProvider';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContextProvider';
-import { Button } from '@mui/material';
 import { ADMIN } from '../../const';
 
 export default function Navbar() {
@@ -185,7 +181,7 @@ export default function Navbar() {
           {/* !!! */}
 
          {/* NETFLIX ICON */}
-         <Link to='/' style={{textDecoration: 'none'}}>
+
           <Typography
             variant="h5"
             noWrap
@@ -195,18 +191,18 @@ export default function Navbar() {
           >
             REACTFLIX
           </Typography>
-          </Link>
 
-          {email === ADMIN ? (
-                  <Button
-                    onClick={() => navigate('/admin')}
-                    sx={{ textAlign: 'center' }}
-                    color='inherit'
-                  >
-                    admin
-                  </Button>
-                ) : (
-                  <></>
+            {email === ADMIN ? (
+            <Link to='/admin' style={{textDecoration: 'none'}}>
+              <Typography
+              noWrap
+              component="div"
+              sx={{ display: { xs: 'none', sm: 'block' }, color: '#E5E5E5', fontWeight: 'bold', paddingX: '20px'}}> 
+                Admin
+              </Typography>
+            </Link>
+            ) : (
+             <></>
             )}
          
 
@@ -235,7 +231,7 @@ export default function Navbar() {
           </Link>
 
          { /* ============ADD MOVIES */}
-          <Link to='/addmovies' style={{textDecoration: 'none'}}>
+          {/* <Link to='/addmovies' style={{textDecoration: 'none'}}>
           <Typography
     
             noWrap
@@ -243,9 +239,10 @@ export default function Navbar() {
             sx={{ display: { xs: 'none', sm: 'block' }, color: '#E5E5E5', fontWeight: 'bold', paddingX: '15px'}}
           >
             Add Movies
-          </Typography>
-          </Link>
+          </Typography> 
+          </Link>  */}
           
+          {/*  ============ MY LIST  */}
           <Link to='/mylist' style={{textDecoration: 'none'}}>
           <Typography
 
@@ -256,21 +253,11 @@ export default function Navbar() {
             My List
           </Typography>
           </Link>
-          {/* <Link style={{textDecoration: 'none'}}>
-          </Link>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-              onChange={fetchByParams}
-            />
-          </Search> */}
+
+           
           <Box sx={{ flexGrow: 1 }} />
 
-          {/* --------------------------------------------------  БЛОК С ПОИСКОМ, УВЕДОМЛЕНИЕМ И ПРОВИЛЬ-------------- */}
+          {/* --------------------------------------------------  БЛОК С ПОИСКОМ, УВЕДОМЛЕНИЕМ И ПРОфиЛЬ-------------- */}
           <Box sx={{ display: { xs: 'none', md: 'flex' },justifyContent:'center',alignItems: 'center' }}>
 
            <Search>

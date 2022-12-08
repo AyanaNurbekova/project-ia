@@ -23,7 +23,6 @@ const MainRoutes = () => {
         { link: '/signup', element: <SignUp/>, id: 4},
         { link: '/main', element: <HomePage />, id: 5 },
         { link: '/movies', element: <Movies />, id: 6},
-        { link: '/addmovies', element: <AddMovies />, id: 7 },
         { link: '/player/:id', element: <Player />, id: 8 },
         { link: '/mylist', element: <MyList />, id: 9 },
         { link: '*', element: <NodeFoundPage />, id: 11 },
@@ -32,6 +31,8 @@ const MainRoutes = () => {
       const PRIVATE_ROUTES = [
         { link: '/edit/:id', element: <EditMovies />, id: 10 },
         { link: '/admin', element: <AdminPage/>, id: 3 },
+        { link: '/addmovies', element: <AddMovies />, id: 7 },
+
       ];
 
       return (
