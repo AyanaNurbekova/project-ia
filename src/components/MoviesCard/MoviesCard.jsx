@@ -1,13 +1,14 @@
 import { Box, Button, Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useAuth } from '../../contexts/AuthContextProvider';
 import { cardContext } from '../../contexts/MoviesCardContext';
 import { moviesContext } from '../../contexts/MoviesContextProvider';
 import './MoviesCard.css'
 const MoviesCard = ({item}) => {
   const {getOneMovies, getData, deleteMovies, updateMovies, oneMovies} = useContext(moviesContext)
   const {getFilmToCart, addFilmToCart} = useContext(cardContext)
-
+  const {user: {email}} = useAuth()
   useEffect(()=> {
       getOneMovies(item.id);
   }, []);
@@ -16,7 +17,7 @@ const MoviesCard = ({item}) => {
 
   const [descr, setDescr] = useState(false)
   console.log(item.description);
-  
+  const admin = 'adminxxx@gmail.com'
   return (
     <Box 
         className='card' sx={{ 
@@ -65,10 +66,11 @@ const MoviesCard = ({item}) => {
           {descr ? ( <Box sx={{textAlign: 'center', overflow: 'auto', display: 'flex'}}>
             <Typography sx={{height: '280px'}}>{item.description}</Typography>
           </Box>) : (<></>)}
-          <Box className='card-tags' sx={{textAlign: 'center', display: 'flex', justifyContent: 'space-evenly'}}>
+          {email === admin && (<Box className='card-tags' sx={{textAlign: 'center', display: 'flex', justifyContent: 'space-evenly'}}>
             <Button onClick={()=> {navigate(`/edit/${item.id}`); updateMovies(id)}} sx={{border: '1px solid green', color: '#fff', backgroundColor: '#181818', padding: '2px', width: '140px'}}>edit</Button>
             <Button onClick={()=> {deleteMovies(item.id); navigate('/movies')}} sx={{border: '1px solid red', color: '#fff', backgroundColor: '#181818', padding: '2px', width: '140px'}}>delete</Button>
-          </Box>
+          </Box>)}
+          
           
         </Box>
       </Box>
